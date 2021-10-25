@@ -8,7 +8,7 @@ import {
   Pressable,
   Dimensions,
 } from "react-native";
-import FlatButton from "../shared/button";
+import FlatButton from "../shared/buttons/button";
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 export default function Home({ navigation }) {
@@ -17,7 +17,7 @@ export default function Home({ navigation }) {
       <View style={{ width: screenWidth - 20, marginTop: 20 }}>
         <FlatButton
           onPress={() => {
-            navigation.navigate("lights out");
+            navigation.navigate("level");
           }}
           text={"Lights out game"}
         />

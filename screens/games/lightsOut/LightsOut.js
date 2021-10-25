@@ -11,39 +11,13 @@ import {
 import { ForceTouchGestureHandler } from "react-native-gesture-handler";
 import { useState } from "react/cjs/react.development";
 
-import FlatButton from "../../shared/button";
-import LightOutButton from "../../shared/lightOutButton";
+import FlatButton from "../../../shared/buttons/button";
+import LightOutButton from "../../../shared/buttons/lightOutButton";
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 
-export default function LightsOut() {
-  let array = [
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "off",
-    "red",
-    "off",
-    "green",
-    "off",
-    "red",
-    "red",
-    "off",
-    "green",
-    "off",
-    "red",
-  ];
+export default function LightsOut(props) {
+  let array = props.route.params.lights;
   const [oneOne, setOneOne] = useState(array[0]);
   const [oneTwo, setOneTwo] = useState(array[1]);
   const [oneThree, setOneThree] = useState(array[2]);
@@ -137,6 +111,7 @@ export default function LightsOut() {
           <LightOutButton
             style={oneOne}
             onPress={() => {
+              console.log(props);
               setOneOne(changeColor(oneOne));
               setOneTwo(changeColor(oneTwo));
               setTwoOne(changeColor(twoOne));
