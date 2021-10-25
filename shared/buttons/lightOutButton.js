@@ -10,7 +10,7 @@ import {
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 
-export default function LightOutButton({ onPress, style }) {
+export default function LightOutButton({ onPress, style, disabled }) {
   let lightOutStyle;
   if (style === "red") {
     lightOutStyle = styles.LightOutRed;
@@ -20,7 +20,7 @@ export default function LightOutButton({ onPress, style }) {
     lightOutStyle = styles.LightOutOff;
   }
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} disabled={disabled}>
       <View style={lightOutStyle}></View>
     </TouchableOpacity>
   );

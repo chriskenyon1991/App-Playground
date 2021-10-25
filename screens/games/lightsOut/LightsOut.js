@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
@@ -49,7 +50,45 @@ export default function LightsOut(props) {
   const [fiveFive, setFiveFive] = useState(array[24]);
 
   const [counter, setCounter] = useState(0);
-
+  const [disabled, setdisabled] = useState(false);
+  if (
+    oneOne === "off" &&
+    oneTwo === "off" &&
+    oneThree === "off" &&
+    oneFour === "off" &&
+    oneFive === "off" &&
+    twoOne === "off" &&
+    twoTwo === "off" &&
+    twoThree === "off" &&
+    twoFour === "off" &&
+    twoFive === "off" &&
+    threeOne === "off" &&
+    threeTwo === "off" &&
+    threeThree === "off" &&
+    threeFour === "off" &&
+    threeFive === "off" &&
+    fourOne === "off" &&
+    fourTwo === "off" &&
+    fourThree === "off" &&
+    fourFour === "off" &&
+    fourFive === "off" &&
+    fiveOne === "off" &&
+    fiveTwo === "off" &&
+    fiveThree === "off" &&
+    fiveFour === "off" &&
+    fiveFive === "off" &&
+    disabled === false
+  ) {
+    console.log("winner");
+    setdisabled(true);
+  }
+  function gameButton() {
+    if (disabled === false) {
+      return "Restart Game";
+    } else {
+      return "Next Level";
+    }
+  }
   function changeColor(color) {
     let newColor;
     if (color === "red") {
@@ -110,6 +149,7 @@ export default function LightsOut(props) {
         <View style={styles.lightRows}>
           <LightOutButton
             style={oneOne}
+            disabled={disabled}
             onPress={() => {
               console.log(props);
               setOneOne(changeColor(oneOne));
@@ -120,6 +160,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={oneTwo}
+            disabled={disabled}
             onPress={() => {
               setOneOne(changeColor(oneOne));
               setOneTwo(changeColor(oneTwo));
@@ -130,6 +171,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={oneThree}
+            disabled={disabled}
             onPress={() => {
               setOneTwo(changeColor(oneTwo));
               setOneThree(changeColor(oneThree));
@@ -140,6 +182,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={oneFour}
+            disabled={disabled}
             onPress={() => {
               setOneThree(changeColor(oneThree));
               setOneFour(changeColor(oneFour));
@@ -150,6 +193,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={oneFive}
+            disabled={disabled}
             onPress={() => {
               setOneFour(changeColor(oneFour));
               setOneFive(changeColor(oneFive));
@@ -161,6 +205,7 @@ export default function LightsOut(props) {
         <View style={styles.lightRows}>
           <LightOutButton
             style={twoOne}
+            disabled={disabled}
             onPress={() => {
               setOneOne(changeColor(oneOne));
               setTwoOne(changeColor(twoOne));
@@ -171,6 +216,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={twoTwo}
+            disabled={disabled}
             onPress={() => {
               setOneTwo(changeColor(oneTwo));
               setTwoOne(changeColor(twoOne));
@@ -182,6 +228,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={twoThree}
+            disabled={disabled}
             onPress={() => {
               setOneThree(changeColor(oneThree));
               setTwoTwo(changeColor(twoTwo));
@@ -193,6 +240,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={twoFour}
+            disabled={disabled}
             onPress={() => {
               setOneFour(changeColor(oneFour));
               setTwoThree(changeColor(twoThree));
@@ -204,6 +252,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={twoFive}
+            disabled={disabled}
             onPress={() => {
               setOneFive(changeColor(oneFive));
               setTwoFour(changeColor(twoFour));
@@ -216,6 +265,7 @@ export default function LightsOut(props) {
         <View style={styles.lightRows}>
           <LightOutButton
             style={threeOne}
+            disabled={disabled}
             onPress={() => {
               setTwoOne(changeColor(twoOne));
               setThreeOne(changeColor(threeOne));
@@ -226,6 +276,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={threeTwo}
+            disabled={disabled}
             onPress={() => {
               setTwoTwo(changeColor(twoTwo));
               setThreeOne(changeColor(threeOne));
@@ -237,6 +288,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={threeThree}
+            disabled={disabled}
             onPress={() => {
               setTwoThree(changeColor(twoThree));
               setThreeTwo(changeColor(threeTwo));
@@ -248,6 +300,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={threeFour}
+            disabled={disabled}
             onPress={() => {
               setTwoFour(changeColor(twoFour));
               setThreeThree(changeColor(threeThree));
@@ -259,6 +312,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={threeFive}
+            disabled={disabled}
             onPress={() => {
               setTwoFive(changeColor(twoFive));
               setThreeFour(changeColor(threeFour));
@@ -271,6 +325,7 @@ export default function LightsOut(props) {
         <View style={styles.lightRows}>
           <LightOutButton
             style={fourOne}
+            disabled={disabled}
             onPress={() => {
               setThreeOne(changeColor(threeOne));
               setFourOne(changeColor(fourOne));
@@ -281,6 +336,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fourTwo}
+            disabled={disabled}
             onPress={() => {
               setThreeTwo(changeColor(threeTwo));
               setFourOne(changeColor(fourOne));
@@ -292,6 +348,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fourThree}
+            disabled={disabled}
             onPress={() => {
               setThreeThree(changeColor(threeThree));
               setFourTwo(changeColor(fourTwo));
@@ -303,6 +360,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fourFour}
+            disabled={disabled}
             onPress={() => {
               setThreeFour(changeColor(threeFour));
               setFourThree(changeColor(fourThree));
@@ -314,6 +372,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fourFive}
+            disabled={disabled}
             onPress={() => {
               setThreeFive(changeColor(threeFive));
               setFourFour(changeColor(fourFour));
@@ -326,6 +385,7 @@ export default function LightsOut(props) {
         <View style={styles.lightRows}>
           <LightOutButton
             style={fiveOne}
+            disabled={disabled}
             onPress={() => {
               setFiveOne(changeColor(fiveOne));
               setFiveTwo(changeColor(fiveTwo));
@@ -335,6 +395,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fiveTwo}
+            disabled={disabled}
             onPress={() => {
               setFourTwo(changeColor(fourTwo));
               setFiveOne(changeColor(fiveOne));
@@ -345,6 +406,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fiveThree}
+            disabled={disabled}
             onPress={() => {
               setFourThree(changeColor(fourThree));
               setFiveTwo(changeColor(fiveTwo));
@@ -355,6 +417,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fiveFour}
+            disabled={disabled}
             onPress={() => {
               setFourFour(changeColor(fourFour));
               setFiveThree(changeColor(fiveThree));
@@ -365,6 +428,7 @@ export default function LightsOut(props) {
           />
           <LightOutButton
             style={fiveFive}
+            disabled={disabled}
             onPress={() => {
               setFourFive(changeColor(fourFive));
               setFiveFour(changeColor(fiveFour));
@@ -377,10 +441,15 @@ export default function LightsOut(props) {
       <View style={{ width: screenWidth - 20, marginTop: 50 }}>
         <FlatButton
           onPress={() => {
-            reset();
+            if (!disabled) {
+              reset();
+            } else {
+              props.navigation.navigate("level");
+            }
+
             console.log("tapped");
           }}
-          text={"Restart game"}
+          text={gameButton()}
         />
       </View>
 
