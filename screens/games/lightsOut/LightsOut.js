@@ -11,14 +11,15 @@ import {
 } from "react-native";
 import { ForceTouchGestureHandler } from "react-native-gesture-handler";
 import { useState } from "react/cjs/react.development";
-
 import FlatButton from "../../../shared/buttons/button";
 import LightOutButton from "../../../shared/buttons/lightOutButton";
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function LightsOut(props) {
   let array = props.route.params.lights;
+  const [level, setLevel] = useState(props.route.params.level + 1);
   const [oneOne, setOneOne] = useState(array[0]);
   const [oneTwo, setOneTwo] = useState(array[1]);
   const [oneThree, setOneThree] = useState(array[2]);
@@ -133,6 +134,16 @@ export default function LightsOut(props) {
     setFiveFive(array[24]);
 
     setCounter(0);
+  }
+  const lvl = toString(props.route.params.level + 1);
+  async function saveLevel(lvl) {
+    try {
+      console.log(typeof lvl);
+      await AsyncStorage.setItem("level", lvl);
+      console.log("saved");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -444,7 +455,13 @@ export default function LightsOut(props) {
             if (!disabled) {
               reset();
             } else {
-              props.navigation.navigate("level");
+              if (props.route.params.currentLevel < level) {
+                saveLevel(level.toString());
+              }
+
+              props.navigation.navigate("level", {
+                level: level,
+              });
             }
 
             console.log("tapped");
