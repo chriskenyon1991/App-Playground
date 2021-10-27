@@ -1,30 +1,20 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.11/libexec/bin/yarn.js add @react-native-async-storage/async-storage
+  C:\Program Files (x86)\nodejs\node.exe C:\Users\c_ken\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  /Users/christopherkenyon/utils/flutter/bin:/usr/local/opt/libpq/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\AdoptOpenJDK\jdk-11.0.11.9-hotspot\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\nodejs\;C:\Program Files\Git\cmd;C:\Gradle\gradle-7.1\bin;C:\Users\c_ken\AppData\Local\Microsoft\WindowsApps;;C:\Users\c_ken\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\c_ken\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\c_ken\AppData\Roaming\npm
 
 Yarn version: 
-  1.22.11
+  1.22.10
 
 Node version: 
   14.16.1
 
 Platform: 
-  darwin x64
+  win32 ia32
 
 Trace: 
-  Error: https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.29.tgz: Request failed "404 Not Found"
-      at ResponseError.ExtendableBuiltin (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:696:66)
-      at new ResponseError (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:802:124)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:67062:16)
-      at Request.emit (events.js:315:20)
-      at Request.module.exports.Request.onRequestResponse (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:141640:10)
-      at ClientRequest.emit (events.js:315:20)
-      at HTTPParser.parserOnIncomingClient (_http_client.js:641:27)
-      at HTTPParser.parserOnHeadersComplete (_http_common.js:126:17)
-      at TLSSocket.socketOnData (_http_client.js:509:22)
-      at TLSSocket.emit (events.js:315:20)
+  Error: UNKNOWN: unknown error, copyfile 'C:\Users\c_ken\AppData\Local\Yarn\Cache\v6\npm-ua-parser-js-0.7.29-aad8d679f15a721ed79454d553e3473f9f0536f1-integrity\node_modules\ua-parser-js\preinstall.bat' -> 'C:\Users\c_ken\appIdeas\myApp\node_modules\ua-parser-js\preinstall.bat'
 
 npm manifest: 
   {
@@ -37,6 +27,7 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-async-storage/async-storage": "^1.15.9",
       "@react-navigation/native": "^6.0.6",
       "@react-navigation/native-stack": "^6.2.5",
       "expo": "~43.0.0",

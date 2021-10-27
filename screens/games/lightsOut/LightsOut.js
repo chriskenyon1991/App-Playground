@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
-import { useState } from "react/cjs/react.development";
 import FlatButton from "../../../shared/buttons/button";
 import LightOutButton from "../../../shared/buttons/lightOutButton";
 const screenWidth = Dimensions.get("window").width;
