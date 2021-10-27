@@ -1,15 +1,6 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Pressable,
-  Dimensions,
-} from "react-native";
-import { ForceTouchGestureHandler } from "react-native-gesture-handler";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { useState } from "react/cjs/react.development";
 import FlatButton from "../../../shared/buttons/button";
 import LightOutButton from "../../../shared/buttons/lightOutButton";
